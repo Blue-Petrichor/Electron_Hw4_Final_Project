@@ -1,11 +1,12 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: wget.sh
+#          FILE: compress.sh
 # 
-#         USAGE: ./wget.sh 
+#         USAGE: ./compress.sh 
 # 
-#   DESCRIPTION: uses wget to download a remote file
+#   DESCRIPTION: compresses filtered data into a zip file using the `zip` program
+#				 compressed filename should be in the form MOCK_DATA_FILTER_YYYY_MM_DD_HH:MM.zip
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -13,7 +14,7 @@
 #         NOTES: ---
 #        AUTHOR: Team Electron
 #  ORGANIZATION: 
-#       CREATED: 02/14/2017 13:36
+#       CREATED: 02/14/2017 15:26
 #      REVISION:  ---
 #===============================================================================
 

@@ -1,11 +1,11 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: wget.sh
+#          FILE: expand.sh
 # 
-#         USAGE: ./wget.sh 
+#         USAGE: ./expand.sh 
 # 
-#   DESCRIPTION: uses wget to download a remote file
+#   DESCRIPTION: expands input file into temp directory
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Team Electron
 #  ORGANIZATION: 
-#       CREATED: 02/14/2017 13:36
+#       CREATED: 02/14/2017 15:23
 #      REVISION:  ---
 #===============================================================================
 

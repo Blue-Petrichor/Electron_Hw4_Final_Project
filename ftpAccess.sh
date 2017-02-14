@@ -1,11 +1,12 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: wget.sh
+#          FILE: ftpAccess.sh
 # 
-#         USAGE: ./wget.sh 
+#         USAGE: ./ftpAccess.sh 
 # 
-#   DESCRIPTION: uses wget to download a remote file
+#   DESCRIPTION: takes a user and password as input and uploads our compressed file to the ftp server
+#				 if not username and password are submitted use anonymous instead
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -13,7 +14,7 @@
 #         NOTES: ---
 #        AUTHOR: Team Electron
 #  ORGANIZATION: 
-#       CREATED: 02/14/2017 13:36
+#       CREATED: 02/14/2017 15:27
 #      REVISION:  ---
 #===============================================================================
 

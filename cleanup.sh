@@ -1,11 +1,11 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: wget.sh
+#          FILE: cleanup.sh
 # 
-#         USAGE: ./wget.sh 
+#         USAGE: ./cleanup.sh 
 # 
-#   DESCRIPTION: uses wget to download a remote file
+#   DESCRIPTION: cleans up all temporary files created by the wrapped script
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Team Electron
 #  ORGANIZATION: 
-#       CREATED: 02/14/2017 13:36
+#       CREATED: 02/14/2017 15:29
 #      REVISION:  ---
 #===============================================================================
 

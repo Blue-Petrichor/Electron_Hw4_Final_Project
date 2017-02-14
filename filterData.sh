@@ -1,11 +1,12 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: wget.sh
+#          FILE: filterData.sh
 # 
-#         USAGE: ./wget.sh 
+#         USAGE: ./filterData.sh 
 # 
-#   DESCRIPTION: uses wget to download a remote file
+#   DESCRIPTION: filters data by only canadian female and email address
+#			     if no address supplied then a dummy one is created by the script
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -13,7 +14,7 @@
 #         NOTES: ---
 #        AUTHOR: Team Electron
 #  ORGANIZATION: 
-#       CREATED: 02/14/2017 13:36
+#       CREATED: 02/14/2017 15:24
 #      REVISION:  ---
 #===============================================================================
 
