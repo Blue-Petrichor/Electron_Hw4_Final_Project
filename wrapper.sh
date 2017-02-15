@@ -66,18 +66,22 @@ then
 	done
 fi
 
-#verify the file is correct with either 2015 or 2016 filewhile read line
-# verify the process has been done correctly
-if [[ $2 =~ 2015 || $2 =~ 2016  ]] #need to add email to argument 
+#verify the file is correct and not empty in $2, $4
+# $2 must have 2015 or 2016 and $4 must have an email entered
+# verify these conditions are true and print messeage if correct.
+if [[ ! -z "$2" && ! -z "$4" ]]
 then
-	if [[ $? -eq 0 ]]
+	if [[ $2 =~ 2015 || $2 =~ 2016  ]]
 	then
-		echo "$2 is an accepted file name"
+		if [[ $? -eq 0 ]]
+		then
+			echo "$2 is an accepted file name"
+		fi
 	fi
 fi
 
 # verify that the required options are entered
-if [[ $1 != -y || -z $2 || $3 != -e || -z $4 ]]
+if [[ $1 != -y || -z $2 || $3 != -e || -z $4 ]] #need to add the $5 and $7
 then
 	echo
 	echo "Missing arguments or incorrectly entered!"
