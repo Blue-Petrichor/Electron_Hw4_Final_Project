@@ -19,46 +19,71 @@
 
 #set -o nounset                              # Treat unset variables as an error
 
+
+# prompt for help
+echo "For help on how to enter parameters type:"
+echo "bash <filename.sh> --help"
+echo
+
 # Function if exit process is not correct or = 0
 usage()
 {
-	echo "Invalid output, check file exit:"
-	echo "if [[ $? -eq 0 ]]:"
+	echo "Try:"
+	echo "[-y year] [-e email] [-u user] [-p passwd]"
+	echo " required   required  optional  optional"
 	exit 1
 }
+#check for the --help option for first param was entered
+if [[ $1 == "--help" ]]
+then
+	usage
+fi
+
 #variable to store file into
 # this will change as the files are created, it should be a piped file and 
 #	not the $1 for input
-wgetFile="$1"
-
-
-# Check if a file has been entered
-if [[ -z $1  ]]
+if [[ $1 != --help ]]
 then
-	echo "No file has been entered!!!"
-	echo
-else
-	echo "Verifying file is correct..."
-	echo
+	while getopts ":y:e:u:p:" opt
+	do
+		case $opt in
+			y) 
+				y=${optarg}
+				;;
+			e)  
+				e=${optarg}
+				;;
+			u)  
+				u=${optarg}
+				;;
+			p) 
+				p=${optarg}
+				;;
+			*) #send to usage function for how to enter
+				usage
+				;;
+		esac
+	done
 fi
 
 #verify the file is correct with either 2015 or 2016 filewhile read line
 # verify the process has been done correctly
-#	The wgetFile variable will change when the files are updated
-if [[ $1 =~ 2015 || $1 =~ 2016  ]]  
+if [[ $2 =~ 2015 || $2 =~ 2016  ]] #need to add email to argument 
 then
 	if [[ $? -eq 0 ]]
 	then
-		echo "$wgetFile is an accepted file name"
-		echo "Files have been correctly processed."
-		#Need to change the input/output file when the others are made
-		echo "output file is named $wgetFile"
+		echo "$2 is an accepted file name"
 	fi
-else
-	echo "Problem processing outfile!!!"
-	usage
 fi
 
-
+# verify that the required options are entered
+if [[ $1 != -y || -z $2 || $3 != -e || -z $4 ]]
+then
+	echo
+	echo "Missing arguments or incorrectly entered!"
+	echo
+	#if not entered then send to --help 
+	usage
+fi
 
 exit 0
