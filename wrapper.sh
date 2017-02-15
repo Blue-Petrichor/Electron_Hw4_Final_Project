@@ -33,14 +33,21 @@ usage()
 	echo " required   required  optional  optional"
 	exit 1
 }
+
+# Function if email is not valid
+email_usage()
+{
+	echo "Email missing param @"
+	echo "ex: john_doe@something.com"
+	exit 1
+}
 #check for the --help option for first param was entered
 if [[ $1 == "--help" ]]
 then
 	usage
 fi
 
-#variable to store file into
-# this will change as the files are created, it should be a piped file and 
+# This will change as the files are created, it should be a piped file and 
 #	not the $1 for input
 if [[ $1 != --help ]]
 then
@@ -71,12 +78,14 @@ fi
 # verify these conditions are true and print messeage if correct.
 if [[ ! -z "$2" && ! -z "$4" ]]
 then
-	if [[ $2 =~ 2015 || $2 =~ 2016  ]]
+	if [[ $2 =~ 2015 || $2 =~ 2016 && $4 =~ @ ]]
 	then
 		if [[ $? -eq 0 ]]
 		then
 			echo "$2 is an accepted file name"
 		fi
+	else
+		email_usage
 	fi
 fi
 
@@ -89,5 +98,12 @@ then
 	#if not entered then send to --help 
 	usage
 fi
+
+echo ""
+
+# The file ouput after files are processed displayed to the user
+#	echo "The file output name is <add file output to user here>"
+
+
 
 exit 0
