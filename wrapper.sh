@@ -19,14 +19,20 @@
 
 #set -o nounset                              # Treat unset variables as an error
 
-
+# Function if exit process is not correct or = 0
+usage()
+{
+	echo "Invalid output, check file exit:"
+	echo "if [[ $? -eq 0 ]]:"
+	exit 1
+}
 #variable to store file into
 # this will change as the files are created, it should be a piped file and 
 #	not the $1 for input
 wgetFile="$1"
 
 
-# Check if file has been entered
+# Check if a file has been entered
 if [[ -z $1  ]]
 then
 	echo "No file has been entered!!!"
@@ -49,7 +55,8 @@ then
 		echo "output file is named $wgetFile"
 	fi
 else
-	echo "Not a correct file entered!!!"
+	echo "Problem processing outfile!!!"
+	usage
 fi
 
 
