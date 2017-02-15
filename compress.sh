@@ -19,7 +19,17 @@
 #===============================================================================
 
 #set -o nounset                              # Treat unset variables as an error
+ts=`date +%Y_%m_%d_%H:%M`
 
+
+#need to know which file to zip
+if [[ $# -ne 1 ]]
+then
+	exit 1
+fi
+
+#zip newley created data file 
+zip -r MOCK_DATA_FILTER_$ts.zip $1
 
 exit 0
 
