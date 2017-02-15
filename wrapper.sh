@@ -21,6 +21,8 @@
 
 
 #variable to store file into
+# this will change as the files are created, it should be a piped file and 
+#	not the $1 for input
 wgetFile="$1"
 
 
@@ -34,12 +36,22 @@ else
 	echo
 fi
 
-#verify the file is correct with either 2015 or 2016 filewhile read line; do
+#verify the file is correct with either 2015 or 2016 filewhile read line
+# verify the process has been done correctly
+#	The wgetFile variable will change when the files are updated
 if [[ $1 =~ 2015 || $1 =~ 2016  ]]  
-then 
-	echo "$wgetFile is a verified file name. "
+then
+	if [[ $? -eq 0 ]]
+	then
+		echo "$wgetFile is an accepted file name"
+		echo "Files have been correctly processed."
+		#Need to change the input/output file when the others are made
+		echo "output file is named $wgetFile"
+	fi
 else
-	echo "$wgetFile is not a valid file name."
+	echo "Not a correct file entered!!!"
 fi
+
+
 
 exit 0
