@@ -18,8 +18,17 @@
 #      REVISION:  ---
 #===============================================================================
 
-#set -o nounset                              # Treat unset variables as an error
+#set -o nounset # Treat unset variables as an error
 
 
+user=$2
+pass=$3
+nameOfFile=$1
+
+ftp -n 137.190.19.90 << END_SCRIPT
+user $user $pass
+put $nameOfFile
+bye
+END_SCRIPT
 exit 0
 
