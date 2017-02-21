@@ -20,5 +20,17 @@
 #set -o nounset                              # Treat unset variables as an error
 
 
+
+#wget for 2015 file
+if [[ $fileIn == 2015 ]]
+then
+	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_2015.tar.gz
+fi
+
+if [[ $fileIn == 2015 ]]
+then
+	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_2016.tar.gz
+fi
+
 exit 0
 
