@@ -119,7 +119,7 @@ then
 fi
 
 
-# verify that the required options are entered
+# verify that the required options are entered for the first two args
 if [[ $1 != -y || -z $2 || $3 != -e || -z $4 ]] #need to add the $5 and $7
 then
 	echo
@@ -129,6 +129,7 @@ then
 	usage
 fi
 
+# verify if entered correctly for optional name and passwd 
 echo ""
 if [[ $5 != -u || -z $6 || $7 != -p || -z $8 ]]
 then 
@@ -143,7 +144,5 @@ fi
 
 # The file ouput after files are processed displayed to the user
 #  echo "The file output name is <add file output to user here>"
-
-
 
 exit 0
