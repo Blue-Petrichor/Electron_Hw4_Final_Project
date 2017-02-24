@@ -26,5 +26,13 @@ then
 	rm -r temp/
 fi
 
+#Check if clean-up worked
+if [[ $? -eq 0 ]]
+then
+	echo "Processed correctly"
+else
+	echo "Did not process correctly"
+fi
+
 exit 0
 
