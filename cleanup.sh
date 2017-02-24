@@ -20,5 +20,11 @@
 #set -o nounset                              # Treat unset variables as an error
 
 
+#Clean up you mess. Delete the temp folder with all the files
+if [[ -d temp ]]
+then
+	rm -r temp/
+fi
+
 exit 0
 

@@ -27,7 +27,7 @@ then
 	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_2015.tar.gz
 fi
 
-if [[ $fileIn == 2015 ]]
+if [[ $fileIn == 2016 ]]
 then
 	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_2016.tar.gz
 fi
