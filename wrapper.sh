@@ -19,6 +19,9 @@
 
 #set -o nounset                              # Treat unset variables as an error
 
+#variable for file
+wGeFile="wget.sh"
+expanded="compress.sh"
 
 # prompt for help
 echo "For help on how to enter parameters type:"
@@ -77,6 +80,7 @@ then
 					then
 						if [[ $? -eq 0 ]]
 						then
+							# Add the file to run here
 							echo "$2 is an accepted year for process:"
 						else
 							usage
@@ -88,6 +92,7 @@ then
 				e=${optarg}
 				if [[ $4 =~ @ && $4 =~ .com ]]
 				then
+					# make varible to store email for use
 					echo "$4 is an accepted email address:"
 					else
 						echo " "
@@ -118,10 +123,13 @@ then
 	done
 fi
 
-
 # verify that the required options are entered for the first two args
-if [[ $1 != -y || -z $2 || $3 != -e || -z $4 ]] #need to add the $5 and $7
+if [[ $1 == -y && $2 == "2015" || "2016" || $3 == -e && $e ]] #need to add the $5 and $7
 then
+	#run the wget file and expanded file with 2015 or 2016 appended as arg
+	$wGetFile
+	$expanded $2
+else
 	echo
 	echo "Missing arguments or incorrectly entered!"
 	echo
@@ -129,18 +137,19 @@ then
 	usage
 fi
 
+#fix this to work when params are not entered
 # verify if entered correctly for optional name and passwd 
-echo ""
-if [[ $5 != -u || -z $6 || $7 != -p || -z $8 ]]
-then 
-	echo 
-	echo "Missing arguments or incorrectly entered!"
-	echo "If trying to pass in user name and password, and are seeing this error message."
-	echo "See example below:"
-	echo
+#echo ""
+#if [[ $5 != -u || -z $6 || $7 != -p || -z $8 ]]
+#then 
+#	echo 
+#	echo "Missing arguments or incorrectly entered!"
+#	echo "If trying to pass in user name and password, and are seeing this error message."
+#	echo "See example below:"
+#	echo
 	# help functions
-	usage
-fi
+#	usage
+#fi
 
 # The file ouput after files are processed displayed to the user
 #  echo "The file output name is <add file output to user here>"
