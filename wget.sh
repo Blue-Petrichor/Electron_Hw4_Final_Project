@@ -21,9 +21,24 @@
 
 fileIn=$1
 
+
+if [[ ! -d temp ]]
+then 
+	mkdir temp
+fi
+
+present=$PWD
+
+cd temp
+
 if [[ $fileIn == 2015 || $fileIn == 2016 ]]
 then
-	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_$fileIn.tar.gz
+	for i in `seq $fileIn -1 2015`
+	do 
+		wget http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_$i.tar.gz
+	done
+	cd $present
+
 else
 	echo "No such file exists."
 	exit 1
