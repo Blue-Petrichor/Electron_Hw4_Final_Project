@@ -28,11 +28,27 @@ pass=$3
 #echo [$user]
 #echo [$pass]
 
-ftp -n 137.190.19.90 << END_SCRIPT
-user $user $pass
-cd /MockData/
-put $nameOfFile
-bye
+present=$PWD
+
+cd temp/
+
+if [[ $user == "anonymous" ]]
+then
+	ftp -n 137.190.19.90 << END_SCRIPT
+	user $user $pass
+	cd /MockData/
+	put $nameOfFile
+	bye
 END_SCRIPT
+else
+	ftp -n 137.190.19.90 << END_SCRIPT
+	user $user $pass
+	put $nameOfFile
+	bye
+END_SCRIPT
+fi
+
+
+cd $present
 exit 0
 
