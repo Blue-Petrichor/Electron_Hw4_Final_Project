@@ -20,12 +20,12 @@
 #set -o nounset                              # Treat unset variables as an error
 
 
-RUNDIR='/home/hvalle/cs3030/Electron_Hw4_Final_Progject'
+RUNDIR='/home/ms43687/Electron_Hw4_Final_Progject'
 #Get Date fields
 MM=`date +%m`
 DATE=`date +%m%d`
 #Program to run
-DEV=crontab_log.sh
+DEV=crontab_log.sh >> crontab.txt
 #Set/Check for directory structure
 LOGDIR=$RUNDIR/log/$MM
 if [[ ! -d $LOGDIR ]]
