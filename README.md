@@ -21,4 +21,7 @@ Homework 4 Team Electron
   * USAGE: ./ftpAccess.sh \<fileToUpload\> \<username\> \<password\>
 7. cleanup.sh
   * Cleans up all temporary files and directories.
+#Crontab_log.sh file to call and execute crontab script
+	* Added crontab.txt - holds the crontab execute command for Monday-Friday 8-5 every six hours.
+	* Added email_subject.txt file, for confirmation of succesful FTP upload to the server. Mail will attach file with message of confirmation to user inputed email address.
 
