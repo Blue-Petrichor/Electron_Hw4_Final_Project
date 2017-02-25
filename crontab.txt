@@ -1,0 +1,7 @@
+#cronjob to run every 6 hours, from 8 am to 5 pm Monday-Friday.
+#### Crontab run command ################## 
+#25 */0 8-17 * * 1-5 /home/ms43687/Electron_Hw4_Final_Project/crontab_log.sh >> crontab.txt
+
+############vappended log runtime #########
+
+
