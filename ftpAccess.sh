@@ -21,12 +21,16 @@
 #set -o nounset # Treat unset variables as an error
 
 
+nameOfFile=$1
 user=$2
 pass=$3
-nameOfFile=$1
+
+#echo [$user]
+#echo [$pass]
 
 ftp -n 137.190.19.90 << END_SCRIPT
 user $user $pass
+cd /MockData/
 put $nameOfFile
 bye
 END_SCRIPT
