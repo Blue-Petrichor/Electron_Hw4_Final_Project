@@ -21,34 +21,18 @@
 
 
 #Create temp folder to store expanded tar.gz files.
-if [[ !-d temp ]]
-then
-	mkdir temp
-fi
-
+#if [[ ! -d temp ]]
+#then
+#	mkdir temp
+#fi
+fileIn=$1
+present=$PWD
 #tar -zxvf file.tar.gz 
 #expand the 2015 file
-if [[ $fileIn == 2015 ]]
-then
-	gunzip MOCK_DATA_2015.tar.gz
-	tar -xvf MOCK_DATA_2015.tar
-fi
-
-#expand the 2016 file
-if [[ $fileIn == 2016 ]]
-then
-
-	gunzip MOCK_DATA_2016.tar.gz
-	tar -xvf MOCK_DATA_2016.tar
-fi
-
-if [[ $? -eq 0 ]]
-then
-	echo "Processed correctly"
-else
-	echo "Did not process crrectly"
-fi
-
+for i in `seq $fileIn -1 2015`
+do
+	gunzip temp/MOCK_DATA_$i.tar.gz 
+	tar -xvf temp/MOCK_DATA_$i.tar -C temp/
+done
 
 exit 0
-

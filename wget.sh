@@ -19,18 +19,31 @@
 
 #set -o nounset                              # Treat unset variables as an error
 
+fileIn=$1
 
 
-#wget for 2015 file
-if [[ $fileIn == 2015 ]]
-then
-	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_2015.tar.gz
+if [[ ! -d temp ]]
+then 
+	mkdir temp
 fi
 
-if [[ $fileIn == 2016 ]]
+present=$PWD
+
+cd temp
+
+if [[ $fileIn == 2015 || $fileIn == 2016 ]]
 then
-	wget -r http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_2016.tar.gz
+	for i in `seq $fileIn -1 2015`
+	do 
+		wget http://icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_$i.tar.gz
+	done
+	cd $present
+
+else
+	echo "No such file exists."
+	exit 1
 fi
+
 
 exit 0
 

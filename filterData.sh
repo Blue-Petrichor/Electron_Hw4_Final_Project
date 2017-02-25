@@ -29,7 +29,7 @@ then
 fi
 
 #awk file to select and filter data, sed file to fill in empty strings
-awk -f filterData.awk $1/MOCK_DATA*.csv | sed -f filterData.sed > $outFile
+awk -f filterData.awk $1/MOCK_DATA*.csv | sed -f filterData.sed > $1/$outFile
 
 
 exit 0

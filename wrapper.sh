@@ -20,8 +20,8 @@
 #set -o nounset                              # Treat unset variables as an error
 
 #variable for file
-wGeFile="wget.sh"
-expanded="compress.sh"
+expandFile="MOCK_DATA_"
+
 
 # prompt for help
 echo "For help on how to enter parameters type:"
@@ -70,7 +70,7 @@ then
 	do
 		case $opt in
 			y) 
-				y=${optarg}
+				year=$OPTARG
 				#verify the file is correct and not empty in $2, $4
 				# $2 must have 2015 or 2016 and $4 must have an email entered
 				# verify these conditions are true and print messeage if correct.
@@ -89,7 +89,7 @@ then
 				fi
 				;;
 			e)  
-				e=${optarg}
+				e=$OPTARG
 				if [[ $4 =~ @ && $4 =~ .com ]]
 				then
 					# make varible to store email for use
@@ -101,14 +101,14 @@ then
 				fi
 				;;
 			u)  
-				u=${optarg}
+				user=$OPTARG
 				if [[ ! -z $6  ]]
 				then 
 					echo "Welcome $6!"
 				fi
 				;;
 			p) 
-				p=${optarg}
+				pass=$OPTARG
 				if [[ -z $8 ]]
 				then 
 					#add default password
@@ -123,18 +123,37 @@ then
 	done
 fi
 
-# verify that the required options are entered for the first two args
-if [[ $1 == -y && $2 == "2015" || "2016" || $3 == -e && $e ]] #need to add the $5 and $7
+#####################  Main shell execution  ##################
+bash wget.sh $year
+
+if [[ $? -eq 0 ]]
 then
-	#run the wget file and expanded file with 2015 or 2016 appended as arg
-	$wGetFile
-	$expanded $2
-else
-	echo
-	echo "Missing arguments or incorrectly entered!"
-	echo
-	#if not entered then send to --help 
-	usage
+	echo "Expanding..."
+	bash expand.sh $year
+fi
+
+if [[ $? -eq 0 ]]
+then 
+	echo "Filtering data..."
+	bash filterData.sh temp
+fi
+
+if [[ $? -eq 0 ]]
+then
+	echo "Compressing filtered data..."
+	bash compress.sh temp
+fi
+
+if [[ $? -eq 0 ]]
+then 
+	echo "Uploading to ftp server..."
+	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
+fi
+
+if [[ $? -eq 0 ]]
+then 
+	echo "Cleaning up..."
+	bash cleanup.sh
 fi
 
 #fix this to work when params are not entered
@@ -153,5 +172,14 @@ fi
 
 # The file ouput after files are processed displayed to the user
 #  echo "The file output name is <add file output to user here>"
+
+
+
+
+
+
+
+
+
 
 exit 0

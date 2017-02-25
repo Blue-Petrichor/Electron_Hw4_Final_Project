@@ -29,7 +29,7 @@ then
 fi
 
 #zip newley created data file 
-zip -r MOCK_DATA_FILTER_$ts.zip $1
+zip -r $1/MOCK_DATA_FILTER_$ts.zip $1/MOCK_DATA_FILTER.csv
 
 exit 0
 
