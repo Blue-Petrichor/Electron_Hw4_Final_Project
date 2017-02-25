@@ -21,9 +21,6 @@
 
 
 #####################  Help functions   ##################
-#variable for file
-expandFile="MOCK_DATA_"
-
 
 # prompt for help
 echo "For help on how to enter parameters type:"
@@ -91,7 +88,7 @@ then
 				fi
 				;;
 			e)  
-				e=$OPTARG
+				email=$OPTARG
 				if [[ $4 =~ @ && $4 =~ .com ]]
 				then
 					# make varible to store email for use
@@ -108,12 +105,16 @@ then
 				then 
 					echo "Welcome $6!"
 					echo ""
+				else
+					usage
 				fi
 				;;
 			p) 
 				pass=$OPTARG
 				if [[ -z $8 ]]
 				then 
+					usage
+				else
 					#add default password
 					echo "Passwordi will be set to default"
 					echo ""
@@ -138,6 +139,7 @@ fi
 
 if [[ $? -eq 0 ]]
 then 
+	echo ""
 	echo "Filtering data..."
 	bash filterData.sh temp
 fi
@@ -150,7 +152,10 @@ fi
 
 if [[ $? -eq 0 && ! -z $user && ! -z $pass ]]
 then 
+	echo ""
 	echo "Uploading to ftp server..."
+	echo "Succesfully transfered file to FTP 137.190.19.90 server"
+	mail -s "No email was entered, no email confirmation sent" [-c $mail] email_subject.txt
 	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
 fi
 
@@ -158,17 +163,19 @@ if [[ $? -eq 0 && -z $user && -z $pass ]]
 then 
 	user="anonymous"
 	pass="password"
+	echo ""
 	echo "Uploading to ftp server..."
+	echo "Succesfully transfered file to FTP 137.190.19.90 server"
+	mail -s "Subject: Successful FTP email confirmatin" [-c $mail] < email_subject.txt
+	echo "Sending verifications email to $email"
 	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
 fi
 
 if [[ $? -eq 0 ]]
-then 
+then
+	echo ""
 	echo "Cleaning up..."
 	bash cleanup.sh
 fi
-
-# The file ouput after files are processed displayed to the user
-#  echo "The file output name is <add file output to user here>"
 
 exit 0
