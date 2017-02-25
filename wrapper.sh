@@ -19,6 +19,8 @@
 
 #set -o nounset                              # Treat unset variables as an error
 
+
+#####################  Help functions   ##################
 #variable for file
 expandFile="MOCK_DATA_"
 
@@ -62,8 +64,8 @@ then
 	usage
 fi
 
-# This will change as the files are created, it should be a piped file and 
-#	not the $1 for input
+
+##################### Getopts and  error handling  ##################
 if [[ $1 != --help ]]
 then
 	while getopts ":y:e:u:p:" opt
@@ -105,6 +107,7 @@ then
 				if [[ ! -z $6  ]]
 				then 
 					echo "Welcome $6!"
+					echo ""
 				fi
 				;;
 			p) 
@@ -112,7 +115,7 @@ then
 				if [[ -z $8 ]]
 				then 
 					#add default password
-					echo "Password accepted, Thanks you!"
+					echo "Passwordi will be set to default"
 					echo ""
 				fi
 				;;
@@ -122,6 +125,7 @@ then
 		esac
 	done
 fi
+
 
 #####################  Main shell execution  ##################
 bash wget.sh $year
@@ -144,8 +148,16 @@ then
 	bash compress.sh temp
 fi
 
-if [[ $? -eq 0 ]]
+if [[ $? -eq 0 && ! -z $user && ! -z $pass ]]
 then 
+	echo "Uploading to ftp server..."
+	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
+fi
+
+if [[ $? -eq 0 && -z $user && -z $pass ]]
+then 
+	user="anonymous"
+	pass="password"
 	echo "Uploading to ftp server..."
 	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
 fi
@@ -156,30 +168,7 @@ then
 	bash cleanup.sh
 fi
 
-#fix this to work when params are not entered
-# verify if entered correctly for optional name and passwd 
-#echo ""
-#if [[ $5 != -u || -z $6 || $7 != -p || -z $8 ]]
-#then 
-#	echo 
-#	echo "Missing arguments or incorrectly entered!"
-#	echo "If trying to pass in user name and password, and are seeing this error message."
-#	echo "See example below:"
-#	echo
-	# help functions
-#	usage
-#fi
-
 # The file ouput after files are processed displayed to the user
 #  echo "The file output name is <add file output to user here>"
-
-
-
-
-
-
-
-
-
 
 exit 0
