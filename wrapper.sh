@@ -166,7 +166,7 @@ then
 	echo ""
 	echo "Uploading to ftp server..."
 	echo "Succesfully transfered file to FTP 137.190.19.90 server"
-	mail -s "Subject: Successful FTP email confirmatin" [-c $email] < email_subject.txt
+	mail -s "Subject: Successful FTP email confirmatin"  $email < email_subject.txt
 	echo "Sending verifications email to $email"
 	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
 fi
