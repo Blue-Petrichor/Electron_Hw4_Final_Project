@@ -1,1 +1,2 @@
-succesfully transfered file to FTP 137.190.19.90 server
+succesfully transfered file to FTP 137.190.19.90 SERVER"
+
