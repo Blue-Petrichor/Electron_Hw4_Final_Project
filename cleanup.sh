@@ -29,9 +29,9 @@ fi
 #Check if clean-up worked
 if [[ $? -eq 0 ]]
 then
-	echo "Processed correctly"
+	echo "Cleanup processed correctly"
 else
-	echo "Did not process correctly"
+	echo "Clean up did not process correctly"
 fi
 
 exit 0
