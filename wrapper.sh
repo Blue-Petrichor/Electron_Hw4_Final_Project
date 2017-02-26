@@ -150,23 +150,23 @@ then
 	bash compress.sh temp
 fi
 
-if [[ $? -eq 0 && ! -z $user && ! -z $pass ]]
+if [[ $? -eq 0 && -z $user && -z $pass ]]
 then 
 	echo ""
 	echo "Uploading to ftp server..."
 	echo "Succesfully transfered file to FTP 137.190.19.90 server"
-	mail -s "No email was entered, no email confirmation sent" [-c $mail] email_subject.txt
+	echo "No email was entered, no email confirmation sent"
 	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
 fi
 
-if [[ $? -eq 0 && -z $user && -z $pass ]]
+if [[ $? -eq 0 && ! -z $user && ! -z $pass ]]
 then 
 	user="anonymous"
 	pass="password"
 	echo ""
 	echo "Uploading to ftp server..."
-	echo "Succesfully transfered file to FTP 137.190.19.90 server"
-	mail -s "Subject: Successful FTP email confirmatin" [-c $mail] < email_subject.txt
+	echo "Succesfully transfered file to FTP 137.190.19.90 SERVER"
+	mail -s "Subject: Successful FTP email confirmatin" [- $mail] < email_subject.txt
 	echo "Sending verifications email to $email"
 	bash ftpAccess.sh MOCK_DATA_FILTER_*.zip $user $pass
 fi
