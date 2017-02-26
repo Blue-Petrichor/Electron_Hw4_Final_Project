@@ -1,0 +1,329 @@
+commit cf16e6bf0e5e068344eef8bdd0cabad0b6527e52
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Sat Feb 25 21:46:41 2017 -0700
+
+    removing unused files
+
+commit 7d175b01fbb831b0ebb07f585d7184978e1ceb81
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Sat Feb 25 21:43:19 2017 -0700
+
+    removed invalid option from mail call
+
+commit 197b1dbc2f07ef7e98b92d2a12d0fc91963f2611
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sun Feb 26 03:50:10 2017 +0000
+
+    Adding all my files again
+
+commit 816500f134e6b76b4ab48ec04cf7a0cfb2209da3
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sun Feb 26 03:40:07 2017 +0000
+
+    Re-upload of email_subject
+
+commit c65a24c3c40ff9926493cbe8e2c20e5e0688697b
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sun Feb 26 03:25:50 2017 +0000
+
+    Wrapper update hopefully for last
+
+commit 419a58c44f1ad7cb6e52174747980a76d89f47ae
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sun Feb 26 03:11:14 2017 +0000
+
+    Fixed mess up
+
+commit 911e663735786b6fa6bc62577a98a947f006aa74
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 19:22:16 2017 +0000
+
+    Added txt files and cronjob .sh file to README.md
+
+commit de45a2728bb896058d0f95091d44b967ee2b94fd
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 19:13:44 2017 +0000
+
+    Added email_subject.txt for confirmation email of succesful FTP upload
+
+commit 7225c0a99900435b91b4440d6107da8d1e20e4b4
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 19:11:49 2017 +0000
+
+    Wrapper with added comfirmation email when FTP is uploaded correctly
+
+commit 8bbfb9b5d289082aef54bc300c09ebf35290a958
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 19:08:47 2017 +0000
+
+    Adding crontab.txt file that has crontab run command
+
+commit 18435a6f201ed4eb6c85a2957aa0a5a5fcb35f5b
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 19:06:44 2017 +0000
+
+    Added crontab_log.sh file to run crontab
+
+commit 5f970af32864f26912f91469d3cff830f283a0ca
+Author: Gavin Brimhall <gavinbrimhall@mail.weber.edu>
+Date:   Sat Feb 25 17:31:42 2017 +0000
+
+    crontab_log.sh change
+
+commit dae0d2093f4482c2e4216ebee341af093822024c
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 17:07:48 2017 +0000
+
+    Crontab log file for redirect to txt file
+
+commit 081d524317cad276b0ccc7b3a9d6109ac3fc1974
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Sat Feb 25 04:18:33 2017 +0000
+
+    Cleaning up in the wrapper file
+
+commit be4d9b76a54a19301cccd4aa49317128c3faa12b
+Merge: 0f6615c 9d4d03f
+Author: blake1991 <10bjohnson2@gmail.com>
+Date:   Fri Feb 24 20:10:51 2017 -0700
+
+    Merge pull request #3 from Blue-Petrichor/final_polishing
+    
+    Final Polish
+
+commit 9d4d03f90c884d308ea0df6fa781b13d23269ef8
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 20:09:14 2017 -0700
+
+    added script execution code to wrapper
+
+commit f12adb525a57f955414a86bd532418b82e6bf29f
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 20:07:39 2017 -0700
+
+    fixed issues with ftpAccess and anonymous users. It should behave correctly now
+
+commit d847cd9c990f7edaf47612b8742162fc7522739f
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 20:06:59 2017 -0700
+
+    fixed issue with filterData and folders
+
+commit 5281d19f517339355672d84b928cbf04e7e59bf6
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 20:06:19 2017 -0700
+
+    fixed issue with compress and folders
+
+commit e53cdf77c0bfa5fcf6f01e1636debb90607778ef
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 19:39:06 2017 -0700
+
+    made cleanup.sh executeable
+
+commit ebdb1eb8a12faaca8d97f5e25dfc9f0625da36d8
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 19:38:04 2017 -0700
+
+    Added for loop to expand.sh to extract files from wget.sh
+
+commit 0fb9909482eca743f942a15ade4090289e14966f
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 19:37:32 2017 -0700
+
+    changed wget.sh to handle mutiple years with a for loop. the year input from the wrapper will be the current year and it'll loop down to 2015 downloading every file it can
+
+commit 406e0b58a16227c60ff0d411d5a6079c7130402a
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 18:44:09 2017 -0700
+
+    Updated readme to reflect wget.sh changes
+
+commit d3a4f04aa81f2b2d47fbeaa0a14b6e93c94330b3
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 18:42:53 2017 -0700
+
+    Changed wget.sh to accomodate a year as input.
+
+commit 0f6615c152a099bbd7c5f9622fe3dbadcbdc6356
+Merge: e033cdc 420ab37
+Author: blake1991 <10bjohnson2@gmail.com>
+Date:   Fri Feb 24 18:23:31 2017 -0700
+
+    Merge pull request #2 from Blue-Petrichor/ftp
+    
+    Adding ftp code to master branch
+
+commit 420ab3754c74aa0917a7ea01daa36a444eb7fce8
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 18:21:56 2017 -0700
+
+    Added new info to readme and cleaned up code
+
+commit c4f8402c343ddca0110f96e0e48a3ba6d7793279
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Fri Feb 24 18:21:34 2017 -0700
+
+    set up ftp server to handle anonymous users. ftpAccess will now cooperate with anonymous users and allow them to upload files
+
+commit e033cdc1df8db815923b333b79053b2deb60871c
+Merge: e87d96d 7664a2d
+Author: Gavin Brimhall <gavinbrimhall@mail.weber.edu>
+Date:   Fri Feb 24 23:57:15 2017 +0000
+
+    Merge branch 'master' of https://github.com/Blue-Petrichor/Electron_Hw4_Final_Project
+
+commit e87d96db9bb02ba9adec44dc68340e531f40ac83
+Author: Gavin Brimhall <gavinbrimhall@mail.weber.edu>
+Date:   Fri Feb 24 23:56:39 2017 +0000
+
+    Changed expand.sh Gavin
+
+commit 7664a2d0ece18d109fb84e042642621334c94a2c
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Fri Feb 24 23:49:16 2017 +0000
+
+    Needed an update
+
+commit 975d4f5d7dc21dbec09e272235b96b094a7e2e96
+Author: Gavin Brimhall <gavinbrimhall@mail.weber.edu>
+Date:   Fri Feb 24 23:34:49 2017 +0000
+
+    Changes made by Gavin
+
+commit bee90ecaf8f32f7466ba63a3dd0499afa874c2f5
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Tue Feb 21 19:50:36 2017 +0000
+
+    wrapper updated
+
+commit 8935ef1460633e7346464edaa9de6c7dd8e0fdf8
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Tue Feb 21 03:05:07 2017 +0000
+
+    Fixing optargs in wrapper.sh
+
+commit 944541b16fd4bfa6dfd1b01546789d1e76a37fb7
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Sat Feb 18 22:52:57 2017 -0700
+
+    Added logic to connect to an ftp server and upload a file
+
+commit 95d31dd5cd7bf20683334f2ab5af0a6d2cb796c9
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Wed Feb 15 22:09:58 2017 +0000
+
+    Added email verification @ to redirect to help function if not included
+
+commit 9f81341e554ea6fb97318d0a216da2928445e0e1
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Wed Feb 15 21:55:53 2017 +0000
+
+    need to add files to wrapper.sh
+
+commit 03c98591ce8a269cabd5e8f36824beb341b59371
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Wed Feb 15 21:44:02 2017 +0000
+
+    Added getopts to wrapper.sh
+
+commit efdd7d3d1df6f09343a4abbd78958f8489768263
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Wed Feb 15 16:42:39 2017 +0000
+
+    Updating wrapper.sh
+
+commit f7ef43190d568e1f9326471f04db1b9fc9c1551a
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Wed Feb 15 16:26:52 2017 +0000
+
+    Added file processed correclty to wrapper.sh
+
+commit 35ee132a0c18b7cde20075cd8ff9e09308d85f3c
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 17:10:04 2017 -0700
+
+    added .gitignore
+
+commit b33ba92f2b28006d08da491cccd3d694bfa084c3
+Merge: 7b594f9 33293a0
+Author: blake1991 <10bjohnson2@gmail.com>
+Date:   Tue Feb 14 17:05:59 2017 -0700
+
+    Merge pull request #1 from Blue-Petrichor/filterData-branch
+    
+    Began work on compress.sh and filterData.sh
+
+commit 33293a0c04fb6152c0a8111770902aa8700937d6
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 17:04:15 2017 -0700
+
+    Added awk and sed files. filter.sh now filters through data and compress.sh now compressed a file
+
+commit 7b594f954a1ca14ffb1d298d48ff9756fbbf32f1
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 16:03:03 2017 -0700
+
+    Updated readme
+
+commit 489435a4c2b7e593cf490b175b0017d51b7ab232
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 15:56:12 2017 -0700
+
+    Trying to fix readme
+
+commit 38a243cad0062075ed1b89bfbd3c3592dd36b099
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 15:52:12 2017 -0700
+
+    Trying to fix readme
+
+commit 3be892ef2411604619ab5b4e3e3ad2eb76306865
+Merge: 34f7664 566a912
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 15:49:51 2017 -0700
+
+    Merge branch 'master' of https://github.com/Blue-Petrichor/Electron_Hw4_Final_Project
+
+commit 34f7664beec2416aed9dcad48f81116f3dee7e91
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 15:49:13 2017 -0700
+
+    Updated README
+
+commit 566a912f7c94676db637a2af996d522fb789ea45
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Tue Feb 14 22:35:26 2017 +0000
+
+    Updated wrapper.sh file with some error handling
+
+commit d601f26f11bb09197bd3fa1c963e6f22dc188d4f
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 15:33:31 2017 -0700
+
+    Adding all .sh files to repo
+
+commit 72c0fbe32c55258a56785234fe660797b95b4191
+Merge: 581dc83 67cc061
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 13:39:12 2017 -0700
+
+    Merge branch 'master' of https://github.com/Blue-Petrichor/Electron_Hw4_Final_Project
+
+commit 67cc06165e6878c1cd72d9d5bea7c8ca6f038fbe
+Author: Michael Shaw <Michaelshaw3@mail.weber.edu>
+Date:   Tue Feb 14 20:38:00 2017 +0000
+
+    Wrapper file wrapper.sh
+
+commit 581dc83998ec33abfc6501d2536be0032717a26c
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 13:37:54 2017 -0700
+
+    adding wget file
+
+commit 3fac471422687b787f71bebc17c791fd934429b2
+Author: Blake Johnson <blakejohnson6@mail.weber.edu>
+Date:   Tue Feb 14 12:53:47 2017 -0700
+
+    initial commit
